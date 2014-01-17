@@ -7,8 +7,9 @@
 <header class="site-head box-shadow" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
     <div class="row-fluid">
         <div class="span3">
-            <div>Logo img</div>
-            <div>{{@blog.title}}</div>
+            <h5 class="logo">
+                <a href="{{@blog.url}}">{{@blog.title}}</a>
+            </h5>
         </div>
         <div class="span9 top-ad ad">Ad</div>
     </div>

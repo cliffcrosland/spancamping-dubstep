@@ -1,20 +1,30 @@
 body {
   max-width: 1000px;
   margin: auto;
-  background-image: url(../img/fresh_snow.png);
+  background-image: url(../img/exclusive_paper.png);
 }
 
 a:hover {
   color: #E03F00;
 }
 
+.logo {
+  margin-bottom: 0;
+  margin-top: 18px;
+}
+
 .site-head {
   padding: 0;
+  padding-top: 10px;
   height: 100px;
   background-color: white;
-  color: inherit;
   border: 1px solid #ddd;
   margin-bottom: 10px;
+  color: #50585D;
+}
+
+.site-head a {
+  text-decoration: none;
 }
 
 .ad {
@@ -29,6 +39,8 @@ a:hover {
 }
 
 .top-ad {
+  margin-left: 0 !important;
+  margin-right: 10px !important;
   width: 730px;
   height: 90px;
 }
@@ -83,4 +95,10 @@ h2.post-title {
 
 .post-tags {
   margin-left: 15px;
+}
+
+.vertical-align {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100px;
 }
