@@ -8,7 +8,7 @@ config = {
     // ### Development **(default)**
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
-        url: 'http://my-ghost-blog.com',
+        url: 'http://www.uwillneverblvthis.com',
 
         // Example mail config
         // Visit http://docs.ghost.org/mail for instructions
@@ -44,12 +44,16 @@ config = {
     // When running Ghost in the wild, use the production environment
     // Configure your URL and mail settings here
     production: {
-        url: 'http://my-ghost-blog.com',
+        url: 'http://www.uwillneverblvthis.com',
         mail: {},
         database: {
-            client: 'sqlite3',
+            client: 'mysql',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
+                host: 'localhost',
+                user: 'ghost',
+                password: process.env.GHOST_DB_PASSWORD,
+                database: 'ghostdev',
+                charset: 'utf8'
             },
             debug: false
         },
