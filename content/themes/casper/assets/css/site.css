@@ -8,9 +8,15 @@ a:hover {
   color: #E03F00;
 }
 
-.logo {
+.blog-logo {
   margin-bottom: 0;
-  margin-top: 18px;
+  margin-top: 10px;
+}
+
+.blog-description {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 14px;
 }
 
 .site-head {
