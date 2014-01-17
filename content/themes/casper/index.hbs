@@ -15,48 +15,47 @@
 </header>
 
 {{! The main content area on the homepage }}
-<main class="content box-shadow" role="main">
+<main class="content box-shadow row-fluid" role="main">
 
-    <div class="row-fluid">
-        <div class="span8">
-            {{! Each post will be output using this markup }}
-            {{#foreach posts}}
+    <div class="span8 post-section">
+        {{! Each post will be output using this markup }}
+        {{#foreach posts}}
 
-            <article class="post">
-                <header>
-                    
-                    <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-                    <span class="post-subtitle">
-                        <i class="fa fa-calendar"></i>
-                        <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
-                        <span class="post-tags">
-                            <i class="fa fa-tag"></i> {{tags}}
-                        </span>
+        <article class="post">
+            <header>
+                <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                <div class="post-subtitle">
+                    <i class="fa fa-calendar"></i>
+                    <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
+                    <span class="post-tags">
+                        <i class="fa fa-tag"></i> {{tags}}
                     </span>
-                </header>
-                <section class="post-image">
-                    {{! This hack shows the post's image, which must be the *very first thing* in the post. }}
+                </div>
+            </header>
+            <section class="post-image">
+                {{! This hack shows the post's image, which must be the *very first thing* in the post. }}
+                <a href="{{url}}">
                     {{content words="0"}}
-                </section>
-                <section class="post-excerpt">
-                    <p>
-                        {{excerpt}} 
-                        <span>
-                            <a href="{{url}}">Read more&hellip;</a>
-                        </span>
-                    </p>
-                </section>
-            </article>
+                </a>
+            </section>
+            <section class="post-excerpt">
+                <p>
+                    {{excerpt}} 
+                    <span>
+                        <a href="{{url}}">Read more&hellip;</a>
+                    </span>
+                </p>
+            </section>
+        </article>
 
-            {{/foreach}}
+        {{/foreach}}
 
-            {{!! After all the posts, we have the previous/next pagination links }}
-            {{pagination}}
-        </div>
-        <div class="span4">
-            <div class="side-ad ad">
-                Ad
-            </div>
+        {{!! After all the posts, we have the previous/next pagination links }}
+        {{pagination}}
+    </div>
+    <div class="span4">
+        <div class="side-ad ad">
+            Ad
         </div>
     </div>
 

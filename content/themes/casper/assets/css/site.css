@@ -4,21 +4,28 @@ body {
   background-image: url(../img/fresh_snow.png);
 }
 
+a:hover {
+  color: #E03F00;
+}
+
 .site-head {
   padding: 10px;
   height: 100px;
   background-color: white;
   color: inherit;
   border: 1px solid #ddd;
+  margin-bottom: 10px;
 }
 
 .ad {
-  border: 1px solid black;
+  border: 1px solid #bbb;
 }
 
 .side-ad {
+  margin-top: 10px;
   width: 300px;
   height: 600px;
+  text-align: center;
 }
 
 .top-ad {
@@ -27,13 +34,19 @@ body {
 }
 
 .content {
-  background-color: white;
+  background-color: #F2F2F2;
   border: 1px solid #ddd;
-  padding: 10px 20px 10px;
+  padding: 0;
 }
 
 .box-shadow {
   box-shadow: 2px 2px 14px 0px #ccc;
+}
+
+.post-section {
+  background-color: white;
+  margin: 0;
+  border-right: 1px solid #ddd;
 }
 
 h2.post-title {
@@ -42,6 +55,7 @@ h2.post-title {
 
 .post-subtitle {
   font-size: 14px;
+  margin: 5px 0 10px;
 }
 
 .post-image p {
