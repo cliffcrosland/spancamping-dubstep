@@ -1,0 +1,63 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The big featured header on the homepage, with the site logo and description }}
+<header class="site-head box-shadow" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <div class="row-fluid">
+        <div class="span3">
+            <div>Logo img</div>
+            <div>{{@blog.title}}</div>
+        </div>
+        <div class="span9 top-ad ad">Ad</div>
+    </div>
+</header>
+
+{{! The main content area on the homepage }}
+<main class="content box-shadow" role="main">
+
+    <div class="row-fluid">
+        <div class="span8">
+            {{! Each post will be output using this markup }}
+            {{#foreach posts}}
+
+            <article class="post">
+                <header>
+                    
+                    <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                    <span class="post-subtitle">
+                        <i class="fa fa-calendar"></i>
+                        <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
+                        <span class="post-tags">
+                            <i class="fa fa-tag"></i> {{tags}}
+                        </span>
+                    </span>
+                </header>
+                <section class="post-image">
+                    {{! This hack shows the post's image, which must be the *very first thing* in the post. }}
+                    {{content words="0"}}
+                </section>
+                <section class="post-excerpt">
+                    <p>
+                        {{excerpt}} 
+                        <span>
+                            <a href="{{url}}">Read more&hellip;</a>
+                        </span>
+                    </p>
+                </section>
+            </article>
+
+            {{/foreach}}
+
+            {{!! After all the posts, we have the previous/next pagination links }}
+            {{pagination}}
+        </div>
+        <div class="span4">
+            <div class="side-ad ad">
+                Ad
+            </div>
+        </div>
+    </div>
+
+</main>
