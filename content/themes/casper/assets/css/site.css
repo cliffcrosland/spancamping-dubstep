@@ -9,7 +9,7 @@ a:hover {
 }
 
 .site-head {
-  padding: 10px;
+  padding: 0;
   height: 100px;
   background-color: white;
   color: inherit;
@@ -41,6 +41,11 @@ a:hover {
 
 .box-shadow {
   box-shadow: 2px 2px 14px 0px #ccc;
+}
+
+.post {
+  margin: 2rem auto;
+  width: 90%;
 }
 
 .post-section {
