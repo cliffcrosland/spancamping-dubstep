@@ -137,3 +137,12 @@ h2.post-title {
   position: relative;
   top: -30px;
 }
+
+.share-on-facebook-btn {
+  box-shadow: 3px 3px 6px 0px #aaa
+}
+
+.share-on-facebook-btn:hover {
+  transition: opacity ease 0.3s;
+  opacity: 0.8;
+}
