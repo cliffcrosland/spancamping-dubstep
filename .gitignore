@@ -3,3 +3,4 @@ node_modules/
 content/data/
 content/images/
 *~
+npm-debug.log
