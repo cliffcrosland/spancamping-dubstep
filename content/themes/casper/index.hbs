@@ -6,13 +6,12 @@
 {{! The big featured header on the homepage, with the site logo and description }}
 <header class="site-head box-shadow" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
     <div class="row-fluid">
-        <div class="span3">
+        <div class="text-center">
             <h4 class="blog-logo">
                 <a href="{{@blog.url}}">{{@blog.title}}</a>
             </h4>
             <div class="blog-description">{{@blog.description}}</div>
         </div>
-        <div class="span9 top-ad ad">Ad</div>
     </div>
 </header>
 
@@ -57,7 +56,6 @@
     </div>
     <div class="span4">
         <div class="side-ad ad">
-            Ad
         </div>
     </div>
 
