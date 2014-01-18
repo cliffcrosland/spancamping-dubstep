@@ -107,3 +107,33 @@ h2.post-title {
   vertical-align: middle;
   height: 100px;
 }
+
+.back-to-top a {
+  float: right;
+  color: #C6C5C5;
+  text-decoration: none;
+  transition: color ease 0.3s;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.back-to-top a:hover {
+  color: #E03F00;
+}
+
+.post-footer .share a {
+    font-size: 4.8rem;
+    display: inline-block;
+    margin: 1.4rem 1.6rem 1.6rem 0;
+    color: #BBC7CC;
+    text-decoration: none;
+}
+
+.post-footer .share a:hover {
+    color: #50585D;
+}
+
+.post-back-to-top {
+  position: relative;
+  top: -30px;
+}
