@@ -154,3 +154,7 @@ h2.post-title {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.26);
   -webkit-font-smoothing: antialiased;
 }
+
+.share-row {
+  margin-bottom: 32px;
+}
