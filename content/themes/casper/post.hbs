@@ -29,16 +29,15 @@
                 {{content}}
             </section>
 
-            <footer class="post-footer">
-
-                <section class="share">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                        <img class="share-on-facebook-btn" src="{{asset "img/shareonfacebook.jpg"}}" />
-                    </a>
-                </section>
-
-            </footer>
+            <div class="row-fluid">
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <div class="btn btn-primary btn-large btn-facebook span7">
+                        <i class="fa fa-facebook"></i>
+                        Share on Facebook
+                    </div>
+                </a>
+            </div>
 
         {{/post}}
 
