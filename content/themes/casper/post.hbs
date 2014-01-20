@@ -15,47 +15,64 @@
 </header>
 
 <main class="content" role="main">
+    <div class="row-fluid">
+        <div class="span8 border-right">
 
-    <article class="{{post_class}}">
+            <article class="post-article">
 
-        {{! Everything inside the #post tags pulls data from the post }}
-        {{#post}}
+                {{! Everything inside the #post tags pulls data from the post }}
+                {{#post}}
 
-            <h3 class="post-title">{{{title}}}</h3>
-            <div class="post-subtitle post-meta">
-                <i class="fa fa-calendar"></i>
-                <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
-                <span class="post-tags">
-                    <i class="fa fa-tag"></i> {{tags}}
-                </span>
-                <span>
+                <h4 class="post-title">{{{title}}}</h4>
+                <div class="post-subtitle post-meta">
+                    <i class="fa fa-calendar"></i>
+                    <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
+                    <span class="post-tags">
+                        <i class="fa fa-tag"></i> {{tags}}
+                    </span>
+                    <span>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                            <div class="btn btn-small btn-facebook top-share-btn">
+                                <i class="fa fa-facebook"></i>
+                                Share
+                            </div>
+                        </a>
+                    </span>
+                </div>
+
+                <section class="post-content">
+                    {{content}}
+                </section>
+
+                <div class="row-fluid share-row">
                     <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                        <div class="btn btn-small btn-facebook top-share-btn">
+                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                        <div class="btn btn-large btn-facebook span7">
                             <i class="fa fa-facebook"></i>
-                            Share
+                            Share on Facebook
                         </div>
                     </a>
-                </span>
-            </div>
+                </div>
 
-            <section class="post-content">
-                {{content}}
-            </section>
+                {{/post}}
 
-            <div class="row-fluid share-row">
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <div class="btn btn-large btn-facebook span7">
-                        <i class="fa fa-facebook"></i>
-                        Share on Facebook
-                    </div>
+            </article>
+        </div>
+        <div class="span4 other-posts">
+            <h6>Must see stories</h6>
+            {{#foreach otherPosts}}
+            <div class="other-post">
+                {{! This hack shows the post's image, which must be the *very first thing* in the post. }}
+                <a href="{{url}}">
+                    {{content words="0"}}
                 </a>
+                <h6 class="other-post-title"><a href="{{url}}">{{{title}}}</a></h6>
             </div>
 
-        {{/post}}
-
-    </article>
+            {{/foreach}}
+        </div>
+    </div>
 
     <div class="post-back-to-top back-to-top">
         <a href="#top">Back to top <i class="fa fa-long-arrow-up"></i></a>

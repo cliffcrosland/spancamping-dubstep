@@ -71,10 +71,14 @@ frontendControllers = {
         var dateInSlug = req.params[0] ? true : false;
         when.join(
             api.settings.read('permalinks'),
-            api.posts.read({slug: req.params[1]})
+            api.posts.read({slug: req.params[1]}),
+            api.posts.browse({page:1, limit: 10})
         ).then(function (promises) {
             var permalink = promises[0].value,
-                post = promises[1];
+                post = promises[1],
+                otherPosts = _.reject(promises[2].posts, function (otherPost) {
+                    return otherPost.id == post.id;
+                });
 
             function render() {
                 // If we're ready to render the page
@@ -88,7 +92,7 @@ frontendControllers = {
                     api.settings.read('activeTheme').then(function (activeTheme) {
                         var paths = config.paths().availableThemes[activeTheme.value],
                             view = post.page && paths.hasOwnProperty('page') ? 'page' : 'post';
-                        res.render(view, {post: post});
+                        res.render(view, {post: post, otherPosts: otherPosts});
                     });
                 });
             }
