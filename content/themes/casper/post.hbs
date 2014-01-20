@@ -29,10 +29,13 @@
                     <i class="fa fa-tag"></i> {{tags}}
                 </span>
                 <span>
-                    <div class="btn btn-small btn-facebook top-share-btn">
-                        <i class="fa fa-facebook"></i>
-                        Share
-                    </div>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                        <div class="btn btn-small btn-facebook top-share-btn">
+                            <i class="fa fa-facebook"></i>
+                            Share
+                        </div>
+                    </a>
                 </span>
             </div>
 
