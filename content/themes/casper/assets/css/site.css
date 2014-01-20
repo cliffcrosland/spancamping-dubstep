@@ -75,6 +75,10 @@ a:hover {
   border-right: 1px solid #ddd;
 }
 
+.border-left {
+  border-left: 1px solid #ddd;
+}
+
 h2.post-title {
   font-size: 26px;
 }
@@ -195,8 +199,14 @@ a {
   padding: 10px 30px 10px;
 }
 
+.side-bar-border-left {
+  border-left: #ddd 1px solid !important;
+  padding-left: 2.564102564102564% !important;
+  margin-left: -1px !important;
+}
+
 .other-posts {
-  padding: 30px 30px 10px;
+  padding: 30px 24px 0px 10px;
 }
 
 .other-post-title {
@@ -205,8 +215,22 @@ a {
 
 .other-post {
   border-bottom: 1px solid #ddd;
+  padding-bottom: 16px;
 }
 
 .other-post:last-child {
   border-bottom: none;
-};
+}
+
+.join-on-facebook {
+  margin-top: 20px;
+  min-height: 390px;
+}
+
+.join-on-facebook-title {
+  margin-bottom: -20px
+}
+
+.fb-like-box {
+  margin-left: -5px;
+}
