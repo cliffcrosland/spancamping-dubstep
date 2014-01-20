@@ -3,27 +3,38 @@
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
+<header class="site-head box-shadow" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <div class="row-fluid">
+        <div class="text-center">
+            <h4 class="blog-logo">
+                <a href="{{@blog.url}}">{{@blog.title}}</a>
+            </h4>
+            <div class="blog-description">{{@blog.description}}</div>
+        </div>
+    </div>
+</header>
+
 <main class="content" role="main">
 
     <article class="{{post_class}}">
 
-        {{! Each post has the blog logo at the top, with a link back to the home page }}
-        <header class="post-header">
-            <a class="blog-logo" href="{{@blog.url}}">
-                {{#if @blog.logo}}
-                    <img src="{{@blog.logo}}" alt="Blog Logo" />
-                {{else}}
-                    <span class="blog-title">{{@blog.title}}</span>
-                {{/if}}
-            </a>
-        </header>
-
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
-            <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}</span>
-
-            <h1 class="post-title">{{{title}}}</h1>
+            <h3 class="post-title">{{{title}}}</h3>
+            <div class="post-subtitle post-meta">
+                <i class="fa fa-calendar"></i>
+                <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
+                <span class="post-tags">
+                    <i class="fa fa-tag"></i> {{tags}}
+                </span>
+                <span>
+                    <div class="btn btn-small btn-facebook top-share-btn">
+                        <i class="fa fa-facebook"></i>
+                        Share
+                    </div>
+                </span>
+            </div>
 
             <section class="post-content">
                 {{content}}
@@ -32,7 +43,7 @@
             <div class="row-fluid share-row">
                 <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                    <div class="btn btn-primary btn-large btn-facebook span7">
+                    <div class="btn btn-large btn-facebook span7">
                         <i class="fa fa-facebook"></i>
                         Share on Facebook
                     </div>
