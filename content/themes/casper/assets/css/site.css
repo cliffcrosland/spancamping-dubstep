@@ -240,3 +240,11 @@ a {
 .white-background {
   background-color: white;
 }
+
+ol, ul {
+  padding-left: 40px;
+}
+
+li {
+  line-height: 1.6em;
+}
