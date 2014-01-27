@@ -233,6 +233,10 @@ a {
   margin-left: -5px;
 }
 
+.fb-like-box iframe {
+  width: 100%;
+}
+
 .white-background {
   background-color: white;
 }
