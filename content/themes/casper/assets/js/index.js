@@ -8,6 +8,7 @@
 
     $(document).ready(function(){
 
+        $("main").fitVids();
         $(".post-content").fitVids();
 
     });
