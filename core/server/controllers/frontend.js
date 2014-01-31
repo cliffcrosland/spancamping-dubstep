@@ -72,7 +72,7 @@ frontendControllers = {
         when.join(
             api.settings.read('permalinks'),
             api.posts.read({slug: req.params[1]}),
-            api.posts.browse({page:1, limit: 10})
+            api.posts.browse({page:1, limit: 5})
         ).then(function (promises) {
             var permalink = promises[0].value,
                 post = promises[1],
